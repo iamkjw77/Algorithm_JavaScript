@@ -1,3 +1,4 @@
+/*
 function solution(a, b) {
     var answer = '';
     var week = ['FRI','SAT','SUN','MON','TUE','WED','THU'];
@@ -10,5 +11,14 @@ function solution(a, b) {
     var answer = week[sum%7];
     return answer;
 }
+*/
+
+function solution(a,b){
+  var answer = '';
+  var date = new Date(2016,a-1,b);
+  var week = ['SUN','MON','TUE','WED','THU','FRI','SAT']
+  return week[date.getDay()]; //date.getDay()는 숫자로 출력
+}
+
 /*테스트*/
-console.log(solution(5, 20));
+console.log(solution(3,2));
