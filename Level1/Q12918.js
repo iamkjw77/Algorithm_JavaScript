@@ -21,12 +21,14 @@ function solution(s) {
       }
     }
 
-    return cnt == 4 ? true : false;
+    return cnt == 4 || cnt == 6 ? true : false;
     */
+
     var result = false;
     if((s.length == 4 || s.length == 6) && /^[0-9]+$/.test(s)){
       result = true;
     }
     return result;
+    
 }
 console.log(solution('155505')); //true 출력
