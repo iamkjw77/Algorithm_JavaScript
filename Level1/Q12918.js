@@ -29,6 +29,6 @@ function solution(s) {
       result = true;
     }
     return result;
-    
+
 }
 console.log(solution('155505')); //true 출력
