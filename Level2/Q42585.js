@@ -1,4 +1,5 @@
 function solution(arrangement) {
+<<<<<<< HEAD
     var arr = arrangement.replace(/\(\)/g,'R').split('');
     var queue = [];
     var cnt = 0;
@@ -30,8 +31,27 @@ function solution(arrangement) {
       }else{continue;}
       sum += cnt+1;
       cnt = 0;
-    }
+=======
+    var arr = arrangement.replace(/\(\)/g,'R');
+    var stack = [];
+    var sum = 0;
 
+    for(var i=0; i<arr.length; i++){
+      switch(arr[i]){
+        case '(' :
+          stack.push(0);
+          break;
+
+        case 'R' :
+          stack = stack.map(v => v+1);
+          break;
+
+        case ')' :
+          sum += stack.pop()+1;
+          break;
+      }
+>>>>>>> e56d7538caeb5cb09ac6d7e7fb069fac3ddeeb25
+    }
     return sum;
 }
-console.log(solution("()(((()())(())()))(())"));
+console.log(solution("()(((()())(())()))(())")); //17출력
