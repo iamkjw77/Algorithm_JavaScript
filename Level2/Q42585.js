@@ -2,6 +2,7 @@ function solution(arrangement) {
     var arr = arrangement.replace(/\(\)/g,'R');
     var stack = [];
     var sum = 0;
+    console.log(arr);
 
     for(var i=0; i<arr.length; i++){
       switch(arr[i]){
