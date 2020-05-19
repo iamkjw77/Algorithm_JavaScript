@@ -1,28 +1,5 @@
 function solution(numbers) {
-    var answer = '';
-    var arr = [];
-    var tmp = 0;
-
-
-    for(var i=0; i<numbers.length; i++){
-      if(numbers[i] < 10){
-        arr.push(numbers[i])
-      }else{
-        tmp = numbers[i];
-        while(tmp > 10){
-          tmp = Math.floor(tmp/10);
-        }
-        arr.push(tmp);
-      }
-    }
-
-    arr.sort(function(a,b){
-      if(a === b){
-
-      }
-      return b-a;
-    });
-
-
+    var answer = numbers.map(v => v+'').sort((a,b) => (b+a)*1-(a+b)*1).join('');
+    return answer[0] === '0' ? '0' : answer;
 }
-console.log(solution([3, 30, 34, 5, 9]));
+console.log(solution([3, 30, 34, 5, 9])); //9534330 출력
