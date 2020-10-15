@@ -1,28 +1,19 @@
-function solution(a, b) {
-    
-    var arr = new Array();
-    var answer = 0;
-
-    if(a>b){
-      for(var i=b;i<=a;i++){
-        arr.push(i);
-      }
-    }else if(a<b){
-      for(var i=a;i<=b;i++){
-        arr.push(i);
-      }
-    }else{
-      answer = a;
-    }
-
-    for(var key in arr){
-      answer += arr[key];
-    }
-
-    return answer;
-
-
-    //return (a+b)*(Math.abs(b-a)+1)/2;
+function solution(a, b, sum = 0) {
+  // const arr = [];
+  // if(a > b){
+  //   let tmp;
+  //   tmp = b;
+  //   b = a;
+  //   a = tmp;
+  // }
+  // for(let i=a; i<=b; i++){
+  //   arr.push(i);
+  // }
+  // return arr.reduce((acc,curr) => {
+  //   return acc + curr
+  // },0);
+  for(let i = Math.min(a,b); i <= Math.max(a,b); i++) sum += i;
+  return sum;
 }
 
 console.log(solution(-2,-1));
