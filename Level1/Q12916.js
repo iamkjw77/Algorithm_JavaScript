@@ -1,24 +1,18 @@
 function solution(s){
-    /*
-    var words = new Array();
-    var p_count = 0;
-    var y_count = 0;
+  // const arr = s.toLowerCase().split('');
+  // let p_cnt = 0;
+  // let y_cnt = 0;
+  //
+  // arr.map(v =>{
+  //   if(v === 'p') return p_cnt += 1;
+  //   else if(v === 'y') return y_cnt += 1;
+  // });
+  //
+  // return (p_cnt === y_cnt) ? true : false;
 
-    words = s.toLowerCase().split('');
-
-    for(var key in words){
-      if(words[key] === 'p'){
-        p_count += 1;
-      }else if(words[key] === 'y'){
-        y_count += 1;
-      }
-    }
-
-    return p_count === y_count ? true : false;
-    */
-
-    return s.toUpperCase().split("P").length === s.toUpperCase().split("Y").length;
+  // return s.toLowerCase().split('p').length === s.toLowerCase().split('y').length;
+  return (s.match(/p/ig)||[]).length === (s.match(/y/ig)||[]).length;
 }
 
-console.log(solution('PyYa')); //true 출력
+console.log(solution('PyYa')); //false 출력
 console.log(solution('abc')); //true 출력
