@@ -1,22 +1,18 @@
 function solution(n) {
-    const arr = new Set();
-    const num = Math.sqrt(n);
-
-    for(var i=1; i<=n; i+=2){
-      arr.add(i);
-    }
-    arr.delete(1);
-    arr.add(2);
-
-    for(var j=3;j<num;j++){
-      if(arr.has(j)){
-        for(var k=j*2; k<=n; k+=j){
-          arr.delete(k);
+  const prime_num = new Set();
+  for(let i=1; i<=n; i+=2){
+    prime_num.add(i);
+  }
+  prime_num.delete(1);
+  prime_num.add(2);
+  for(let j=3; j<=Math.sqrt(n); j++){
+      if(prime_num.has(j)){
+        for(let k=j*2; k<=n; k+=j){
+          prime_num.delete(k);
         }
-      }
     }
-
-    return arr.size;
+  }
+  return prime_num.size;
 }
 
-console.log(solution(10)); //4출력
+console.log(solution(17)); //7출력
