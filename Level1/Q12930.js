@@ -1,14 +1,12 @@
 function solution(s) {
-    var answer = '';
-    var arr = s.split(' ');
+    // return s.split(' ').map((v) =>{
+    //   return v.split('').map((curr, idx) => {
+    //     return (idx % 2 === 0) ? curr.toUpperCase() : curr.toLowerCase();
+    //   }).join('');
+    // }).join(' ');
+    return s.toUpperCase().replace(/(\w)(\w)/g, function(v){
+      return v[0].toUpperCase() + v[1].toLowerCase();
+    });
 
-    for(var i=0;i<arr.length;i++){
-      for(var j=0;j<arr[i].length;j++){
-        answer += (j%2 == 0) ? arr[i][j].toUpperCase() : arr[i][j].toLowerCase();
-      }
-      answer += i != arr.length-1 ? ' ' : '';
-    }
-    return answer;
-    //return s.toUpperCase().replace(/(\w)(\w)/g, function(a){return a[0].toUpperCase() + a[1].toLowerCase()});
 }
 console.log(solution("hello world")); // HeLlO WoRlD 출력
